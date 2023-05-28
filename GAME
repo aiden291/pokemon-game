@@ -1,0 +1,48 @@
+import random
+
+# Define the available Pokémon and their stats
+pokemon_data = {
+    "Pikachu": {"hp": 35, "attack": 55, "defense": 40, "speed": 90, "moves": ["Tackle", "Thunder Shock"]},
+    "Charmander": {"hp": 39, "attack": 52, "defense": 43, "speed": 65, "moves": ["Scratch", "Ember"]},
+    "Squirtle": {"hp": 44, "attack": 48, "defense": 65, "speed": 43, "moves": ["Tackle", "Water Gun"]},
+    "Bulbasaur": {"hp": 45, "attack": 49, "defense": 49, "speed": 45, "moves": ["Tackle", "Vine Whip"]},
+    "Jigglypuff": {"hp": 115, "attack": 45, "defense": 20, "speed": 20, "moves": ["Pound", "Sing"]},
+    "Psyduck": {"hp": 50, "attack": 52, "defense": 48, "speed": 55, "moves": ["Scratch", "Water Gun"]},
+    "Geodude": {"hp": 40, "attack": 80, "defense": 100, "speed": 20, "moves": ["Tackle", "Rock Throw"]},
+    "Machop": {"hp": 70, "attack": 80, "defense": 50, "speed": 35, "moves": ["Karate Chop", "Low Kick"]},
+    "Abra": {"hp": 25, "attack": 20, "defense": 15, "speed": 90, "moves": ["Teleport"]},
+    "Magikarp": {"hp": 20, "attack": 10, "defense": 55, "speed": 80, "moves": ["Splash"]},
+    
+    # Add more Pokémon here
+}
+
+# Function to simulate a battle turn
+def battle_turn(attacker, defender, attacker_move):
+    attacker_power = move_data[attacker_move]["power"]
+    attacker_accuracy = move_data[attacker_move]["accuracy"]
+
+    # Simulate attacker's attack
+    if random.random() <= attacker_accuracy / 100:
+        defender["hp"] -= attacker_power
+
+# Ask player 1 to choose their Pokémon
+print("Player 1, choose your Pokémon:")
+for index, pokemon in enumerate(pokemon_data.keys()):
+    print(f"{index+1}. {pokemon}")
+player1_choice = int(input("Enter the number corresponding to your choice: ")) - 1
+player1_pokemon_name = list(pokemon_data.keys())[player1_choice]
+player1_pokemon = {
+    "name": player1_pokemon_name,
+    "level": 5,
+    "experience": 0,
+    "hp": pokemon_data[player1_pokemon_name]["hp"],
+    "moves": pokemon_data[player1_pokemon_name]["moves"]
+}
+
+# Ask player 2 to choose their Pokémon
+print("\nPlayer 2, choose your Pokémon:")
+for index, pokemon in enumerate(pokemon_data.keys()):
+    print(f"{index+1}. {pokemon}")
+player2_choice = int(input("Enter the number corresponding to your choice: ")) - 1
+player2_pokemon_name = list(pokemon_data.keys())[player2_choice]
+player2_pokemon
