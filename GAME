@@ -26,7 +26,10 @@ def battle_turn(attacker, defender, attacker_move):
         defender["hp"] -= attacker_power
 
 # Ask player 1 to choose their Pokémon
-print("Player 1, choose your Pokémon:")
+print("
+MADE BY aiden291
+
+Player 1, choose your Pokémon:")
 for index, pokemon in enumerate(pokemon_data.keys()):
     print(f"{index+1}. {pokemon}")
 player1_choice = int(input("Enter the number corresponding to your choice: ")) - 1
